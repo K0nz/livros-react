@@ -8,23 +8,23 @@ let livros: Livro[] = [
 ];
 
 export class ControleLivro {
-  // Método para obter a lista completa de livros
-  obterLivros() {
-    return livros;
-  }
-
-  // Método para incluir um novo livro à lista
-  incluir(livro: Livro) {
-    const maxCodigo = Math.max(...livros.map(l => l.codigo));
-    livro.codigo = maxCodigo + 1;
-    livros.push(livro);
-  }
-
-  // Método para excluir um livro da lista com base no código
-  excluir(codigo: number) {
-    const index = livros.findIndex(l => l.codigo === codigo);
-    if (index !== -1) {
-      livros.splice(index, 1);
+    // Método para obter a lista completa de livros
+    obterLivros() {
+      return livros;
+    }
+  
+    // Método para incluir um novo livro à lista
+    incluir(livro: Livro) {
+      const maxCodigo = Math.max(...livros.map(l => l.codigo));
+      livro.codigo = maxCodigo + 1;
+      livros.push(livro);
+    }
+  
+    // Método para excluir um livro da lista com base no código
+    excluir(codigo: number) {
+      const index = livros.findIndex(l => l.codigo === codigo);
+      if (index !== -1) {
+        livros.splice(index, 1);
+      }
     }
   }
-}
